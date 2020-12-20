@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Title</title>
 </head>
 <body>
-Hello World
+<h1>Bogo Traceroute: The Traceroute Simulator</h1>
+<div>
+    <label for="source">Source Address:</label>
+    <input id="source" type="text" placeholder="192.168.0.1">
+</div>
+<div>
+    <label for="dest">Destination Address:</label>
+    <input id="dest" type="number" placeholder="133.17.110.207">
+</div>
+<div>
+    <label for="name">Destination Host Name:</label>
+    <input id="name" type="number" placeholder="welcome.is.kyusan-u.ac.jp">
+</div>
+<div id="button">
+    <button class="btn" onclick="fetchAll()">Fetch All</button>
+    <button class="btn" onclick="">AddEntry</button>
+    <br>
+    <button class="btn" onclick="">TraceRT</button>
+    <button class="btn" onclick="">Blank</button>
+    <button class="btn" onclick="">Blank</button>
+</div>
+<div id="message">initializing...</div>
 </body>
 </html>
