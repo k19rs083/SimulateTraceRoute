@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -12,11 +12,11 @@
     <title>BogoTraceroute</title>
 
     <script>
-        let nifCloud = new NCMB(appKey, clientKey);
+        let ncmb = new NCMB(appKey, clientKey);
         const db = "BogoTraceroute";
 
         function fetchAll() {
-            let TestDataClass = nifCloud.DataStore(db);
+            let TestDataClass = ncmb.DataStore(db);
             TestDataClass.order("name", false).fetchAll()
                 .then(function (results) {
                     showResults(results);
@@ -25,7 +25,7 @@
 
         function showResults(results) {
             // テーブルのヘッダを生成
-            let msg = "<table><tr><th>Entry</th><th>Source</th><th>Dest</th><th>Hostname</th></tr>";
+            let msg = "<table><tr><th>エントリ</th><th>送信元アドレス</th><th>ネクストホップアドレス</th><th>送信先の名称(オプション)</th></tr>";
             for (let i = 0; i < results.length; i++) {
                 // 各データを収めた表の列を生成
                 msg += "<tr>";
@@ -41,7 +41,7 @@
         }
 
         function register() {
-            let TestDataClass = nifCloud.DataStore(db);
+            let TestDataClass = ncmb.DataStore(db);
             let testDataClass = new TestDataClass();
             let source = $("#source").val();
             let dest = $("#dest").val();
@@ -60,8 +60,30 @@
         }
 
         function traceRoute() {
-            let source = $("#source").val();
-            let dest = $("#dest").val();
+            let src = String($("#source").val()); // フォームからソースアドレスを取得
+            let destination = String($("#dest").val()); // フォームから最終宛先アドレスを取得
+
+            let testDataClass = ncmb.DataStore(db);
+
+            // 最終宛先アドレスからソースアドレスにたどり着くまでループ
+            // 15回で終わらなかったらエラーを表示
+            for (let i = 0; i < 15; i++) {
+                console.log(destination)
+                testDataClass
+                    .equalTo("dest", destination)
+                    .fetchAll()
+                    .then(function (results) {
+                        let object = results[0];
+                        let temp = object.source;
+                        if(temp === src){
+                            return;
+                        }
+                        console.log(object.name + " " + object.source + " " + object.dest);
+                        console.log(temp)
+                        destination = String(temp);
+                        console.log(destination)
+                    })
+            }
         }
 
     </script>
@@ -85,7 +107,7 @@
     <button class="btn" onclick="fetchAll()">Fetch All</button>
     <button class="btn" onclick="register()">AddEntry</button>
     <br>
-    <button class="btn" onclick="">TraceRT</button>
+    <button class="btn" onclick="traceRoute()">TraceRT</button>
     <button class="btn" onclick="">Blank</button>
     <button class="btn" onclick="">Blank</button>
 </div>

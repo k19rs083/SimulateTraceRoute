@@ -12,6 +12,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cf973776-e621-4314-8ed9-b649e1ad138f" name="Default Changelist" comment="Implemented basic function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +60,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608460811812</updated>
-      <workItem from="1608460812990" duration="5521000" />
+      <workItem from="1608460812990" duration="6936000" />
+      <workItem from="1608662288103" duration="7013000" />
     </task>
     <task id="LOCAL-00001" summary="Project's Initial Commit">
       <created>1608460991665</created>
@@ -82,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608462731635</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="implement register function">
+      <created>1608478999708</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608478999708</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,21 +107,23 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project's Initial Commit" />
     <MESSAGE value="Made HTML body" />
     <MESSAGE value="Implemented basic function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented basic function" />
+    <MESSAGE value="implement register function" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement register function" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2388" y="165" key="SettingsEditor" timestamp="1608460976094">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2388" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608460976094" />
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1608462218531">
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2" timestamp="1608486101175">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608462218531" />
+    <state x="2472" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608486101175" />
   </component>
 </project>
